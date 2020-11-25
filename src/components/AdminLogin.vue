@@ -1,5 +1,5 @@
 <template>
-<div class="home col-5 mx-auto py-5 mt-3">
+<div class="col-md-5 mx-auto py-5 mt-3">
     <h1 class="text-center">Login</h1>
     <div class="card">
         <div class="card-body">

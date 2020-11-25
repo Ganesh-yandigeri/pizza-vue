@@ -1,7 +1,13 @@
 <template>
 <div>
     <Header />
-    <router-view />
+    <transition
+    mode="out-in"
+    enter-active-class="animate__animated animate__slideInLeft"
+    leave-active-class="animate__animated animate__zoomOut"
+    >
+        <router-view />
+    </transition>
     <Footer />
 </div>
 </template>

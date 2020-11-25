@@ -4,7 +4,7 @@
     <h2>All types pizza</h2>
     <div class="row">
         <div v-for="item in products" :key="item.id" class="cardstyle">
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <img class="card-img-top" :src="'http://127.0.0.1:8000/'+item.image" alt="Card image cap" style="width: 17.9rem; height: 10rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{ item.name }}</h5>
@@ -22,7 +22,6 @@
 
 <script>
 import User from './../api/User';
-
 export default {
     name: 'Products',
     data() {
@@ -42,9 +41,11 @@ export default {
     },
     methods: {
         addToCart(item) {
-            this.flashSuccess('Pizza add to cart', {
-                timeout: 300
-            });
+           this.$toast.warning('Pizza add to cart', {
+            position: 'top-right',
+            duration: 3000,
+            dismissible: true
+            })
             this.$store.commit('addToCart', item);
         }
     },
